@@ -1,5 +1,7 @@
 package com;
 
+import java.util.Scanner;
+
 public class Person {
     /*
     Person details
@@ -10,13 +12,12 @@ public class Person {
     String city;
     String state;
     int zip;
-    String phoneNumber;
+    long phoneNumber;
     String email;
 
     /*
     Getters and setters for the variables in Person class
      */
-
     public String getFirstName() {
         return firstName;
     }
@@ -65,11 +66,11 @@ public class Person {
         this.zip = zip;
     }
 
-    public String getPhoneNumber() {
+    public long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
