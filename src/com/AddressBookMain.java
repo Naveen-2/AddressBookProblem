@@ -100,6 +100,9 @@ public class AddressBookMain {
         return person;
     }
 
+    /**
+     * displayContacts - method to display the contacts in addressBook
+     */
     public void displayContacts(){
         if(!addressBook.isEmpty()) {
             for (int i = 1; i <= addressBook.size(); i++) {
