@@ -102,6 +102,25 @@ public class AddressBookMain {
         return person;
     }
 
+    public void displayContacts(){
+        if(!addressBook.isEmpty()) {
+            for (int i = 1; i <= addressBook.size(); i++) {
+                System.out.println("Contact " + i);
+                System.out.println("First Name: " + addressBook.get(i - 1).getFirstName());
+                System.out.println("Last Name: " + addressBook.get(i - 1).getLastName());
+                System.out.println("Address: " + addressBook.get(i - 1).getAddress());
+                System.out.println("City: " + addressBook.get(i - 1).getCity());
+                System.out.println("State: " + addressBook.get(i - 1).getState());
+                System.out.println("Zip: " + addressBook.get(i - 1).getZip());
+                System.out.println("Phone: " + addressBook.get(i - 1).getPhoneNumber());
+                System.out.println("Email: " + addressBook.get(i - 1).getEmail());
+
+            }
+        } else {
+            System.out.println("Address book empty.");
+        }
+    }
+
     public boolean checkDuplicateByFirstName(String name) {
         for (Person person : addressBook) {
             if (name.equalsIgnoreCase(person.firstName)) {
@@ -112,4 +131,17 @@ public class AddressBookMain {
         return false;
     }
 
+    public void deleteByName(String name) {
+        if(!addressBook.isEmpty()) {
+            for (Person person : addressBook) {
+                if (name.equals(person.firstName)) {
+                    addressBook.remove(person);
+                    System.out.println("Contact removed successfully.");
+                    break;
+                } else {
+                    System.out.println("Contact nor found");
+                }
+            }
+        }
+    }
 }

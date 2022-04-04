@@ -18,6 +18,7 @@ public class Main {
             switch (choice) {
                 case 1 -> addressBookMain.addContactToAddressBook();
                 case 2 -> addressBookMain.editByName(ScannerUtil.getString("Enter contact name to edit: "));
+                case 3 -> addressBookMain.deleteByName(ScannerUtil.getString("Enter contact name to delete: "));
                 default -> {
                 }
             }
