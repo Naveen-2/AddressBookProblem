@@ -52,5 +52,18 @@ public class AddressBookDictionary {
         }
     }
 
+    /**
+     * displayPeopleByRegion - method to display the contacts only in specified region
+     * @param addressBookDict - List of contacts in the selected region
+     */
+    public void displayPeopleByRegion(Hashtable<String, ArrayList<Person>> addressBookDict) {
+        String regionName = ScannerUtil.getString("Enter the name of the region :");
+
+        addressBookDict.values().stream()
+                .map(region -> region.stream()
+                        .filter(person -> person.getState().equals(regionName) || person.getCity().equals(regionName)))
+                .forEach(person -> person.forEach(System.out::println));
+    }
+
 }
 

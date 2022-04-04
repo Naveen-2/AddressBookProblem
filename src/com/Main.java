@@ -45,7 +45,14 @@ public class Main {
                 /*
                 Search and print first name of all contacts by state
                  */
-                case 7 -> addressBookDictionary.searchByState();
+                case 7 -> addressBookDictionary.searchByState(); /*
+                Display only the contacts in certain city
+                 */
+                case 8 -> addressBookDictionary.displayPeopleByRegion(AddressBookMain.personByCity);
+                /*
+                Display only the contacts in certain state
+                 */
+                case 9 -> addressBookDictionary.displayPeopleByRegion(AddressBookMain.personByState);
                 default -> {
                 }
             }

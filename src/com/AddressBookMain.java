@@ -40,6 +40,8 @@ public class AddressBookMain {
             adding person to address book
             */
             addressBook.add(person);
+            addPersonToCity(person);
+            addPersonToState(person);
         }
     }
 
@@ -129,8 +131,8 @@ public class AddressBookMain {
 
     /**
      * method to check if the contact is already available in address book or not
-     * @param name
-     * @return
+     * @param name - name to check if name already in list
+     * @return - true if contact name already present
      */
     public boolean checkDuplicateByFirstName(String name) {
         for (Person person : addressBook) {
@@ -144,7 +146,7 @@ public class AddressBookMain {
 
     /**
      * method to delete a contact by first name
-     * @param name
+     * @param name - name to check if name already in list
      */
     public void deleteByName(String name) {
         if(!addressBook.isEmpty()) {
