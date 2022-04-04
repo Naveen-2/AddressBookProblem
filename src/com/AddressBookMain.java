@@ -121,6 +121,11 @@ public class AddressBookMain {
         }
     }
 
+    /**
+     * method to check if the contact is already available in address book or not
+     * @param name
+     * @return
+     */
     public boolean checkDuplicateByFirstName(String name) {
         for (Person person : addressBook) {
             if (name.equalsIgnoreCase(person.firstName)) {
@@ -131,6 +136,10 @@ public class AddressBookMain {
         return false;
     }
 
+    /**
+     * method to delete a contact by first name
+     * @param name
+     */
     public void deleteByName(String name) {
         if(!addressBook.isEmpty()) {
             for (Person person : addressBook) {
