@@ -53,6 +53,14 @@ public class Main {
                 Display only the contacts in certain state
                  */
                 case 9 -> addressBookDictionary.displayPeopleByRegion(AddressBookMain.personByState);
+                /*
+                Count only the contacts in certain city
+                 */
+                case 10 -> addressBookDictionary.countPeopleByRegion(AddressBookMain.personByCity);
+                /*
+                Count only the contacts in certain state
+                 */
+                case 11 -> addressBookDictionary.countPeopleByRegion(AddressBookMain.personByState);
                 default -> {
                 }
             }
