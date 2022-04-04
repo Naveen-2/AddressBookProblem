@@ -38,7 +38,14 @@ public class Main {
                 /*
                 Option to add new address book
                  */
-                case 5 -> addressBookDictionary.addAddressBook(ScannerUtil.getString("Enter name of Address Book: "));
+                case 5 -> addressBookDictionary.addAddressBook(ScannerUtil.getString("Enter name of Address Book: "));  /*
+                Search and print first names of all contacts by city
+                 */
+                case 6 -> addressBookDictionary.searchByCity();
+                /*
+                Search and print first name of all contacts by state
+                 */
+                case 7 -> addressBookDictionary.searchByState();
                 default -> {
                 }
             }

@@ -13,7 +13,9 @@ public class UserMenu {
                  2.Edit Contact\s
                  3.Delete Contact\s
                  4.Add Multiple Contacts\s
-                 5.Add New Address Book""");
+                 5.Add New Address Book\s
+                 6.Search Person by City name
+                 7.Search Person by State name""");
         System.out.print("Enter your choice: ");
         return input.nextInt();
     }

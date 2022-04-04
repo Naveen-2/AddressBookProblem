@@ -27,5 +27,30 @@ public class AddressBookDictionary {
         }
     }
 
+
+    /**
+     * searchByCity - method to find the contacts in specified city
+     */
+    public void searchByCity() {
+
+        String cityName = ScannerUtil.getString("Enter the name of the City to get the persons : ");
+        for (String i : addressBookDict.keySet()) {
+            List<Person> arr = addressBookDict.get(i);
+            arr.stream().filter(contact -> contact.getCity().equals(cityName)).forEach(contact -> System.out.println(contact.getFirstName()));
+        }
+    }
+
+    /**
+     * searchByState - method to find the contacts in specified state
+     */
+    public void searchByState() {
+
+        String stateName = ScannerUtil.getString("Enter the name of the State to the get persons : ");
+        for (String i : addressBookDict.keySet()) {
+            List<Person>	arr = addressBookDict.get(i);
+            arr.stream().filter(person -> person.getState().equals(stateName)).forEach(person -> System.out.println(person.getFirstName()));
+        }
+    }
+
 }
 

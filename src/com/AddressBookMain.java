@@ -4,11 +4,16 @@ import java.util.*;
 
 public class AddressBookMain {
 
+
+    AddressBookDictionary addressBookDictionary = new AddressBookDictionary();
     /*
     addressBook list to add Person objects
      */
     List<Person> addressBook = new ArrayList<>();
 
+
+    public static Hashtable<String, ArrayList<Person>> personByCity  = new Hashtable<>();
+    public static Hashtable<String, ArrayList<Person>> personByState = new Hashtable<>();
 
     /**
      * addContactToAddressBook - method to get user input and create a contact
@@ -165,4 +170,37 @@ public class AddressBookMain {
             option = ScannerUtil.getString("Press 'Y' to add more contacts");
         } while (option.equalsIgnoreCase("Y"));
     }
+
+    /**
+     *  addPersonToCity - method t check the person by city
+     * @param contact- We are parsing the contact there
+     */
+    public void addPersonToCity(Person contact) {
+        if (personByCity.containsKey(contact.getCity())) {
+            personByCity.get(contact.getCity()).add(contact);
+        }
+        else {
+            ArrayList<Person> cityList = new ArrayList<>();
+            cityList.add(contact);
+            personByCity.put(contact.getCity(), cityList);
+        }
+    }
+
+
+    /**
+     *  addPersonToState method to check the person by state
+     * @param contact- We are parsing the contact there
+     */
+    public void addPersonToState(Person contact) {
+        if (personByState.containsKey(contact.getState())) {
+            personByState.get(contact.getState()).add(contact);
+        }
+        else {
+            ArrayList<Person> stateList = new ArrayList<>();
+            stateList.add(contact);
+            personByState.put(contact.getState(), stateList);
+        }
+    }
+
+
 }
