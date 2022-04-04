@@ -92,24 +92,36 @@ public class AddressBookDictionary {
             int sortingChoice = ScannerUtil.getInt("Sort by\n 1.First Name\n 2.City\n 3.State \n4.Zip");
             switch (sortingChoice) {
                 case 1 -> {
+                    /*
+                    Sort By first name
+                     */
                     sortedContactList = contactList.stream()
                             .sorted(Comparator.comparing(Person::getFirstName))
                             .collect(Collectors.toList());
                     printSortedList(sortedContactList);
                 }
                 case 2 -> {
+                    /*
+                    Sort by city
+                     */
                     sortedContactList = contactList.stream()
                             .sorted(Comparator.comparing(Person::getCity))
                             .collect(Collectors.toList());
                     printSortedList(sortedContactList);
                 }
                 case 3 -> {
+                    /*
+                    Sort by state name
+                     */
                     sortedContactList = contactList.stream()
                             .sorted(Comparator.comparing(Person::getState))
                             .collect(Collectors.toList());
                     printSortedList(sortedContactList);
                 }
                 case 4 -> {
+                    /*
+                    Sort by zip code
+                     */
                     sortedContactList = contactList.stream()
                             .sorted(Comparator.comparing(Person::getZip))
                             .collect(Collectors.toList());
