@@ -1,8 +1,10 @@
 package com;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AddressBookDictionary {
 
@@ -78,6 +80,56 @@ public class AddressBookDictionary {
 
         System.out.println("Number of People residing in " + regionName+" are: "+countPeople+"\n");
 
+    }
+
+    /**
+     * sortAddressBook - method to sort all address books based on user selection
+     */
+    public void sortAddressBook(){
+        List<Person> sortedContactList;
+        for (String i : addressBookDict.keySet()) {
+            List<Person> contactList = addressBookDict.get(i);
+            int sortingChoice = ScannerUtil.getInt("Sort by\n 1.First Name\n 2.City\n 3.State \n4.Zip");
+            switch (sortingChoice) {
+                case 1 -> {
+                    sortedContactList = contactList.stream()
+                            .sorted(Comparator.comparing(Person::getFirstName))
+                            .collect(Collectors.toList());
+                    printSortedList(sortedContactList);
+                }
+                case 2 -> {
+                    sortedContactList = contactList.stream()
+                            .sorted(Comparator.comparing(Person::getCity))
+                            .collect(Collectors.toList());
+                    printSortedList(sortedContactList);
+                }
+                case 3 -> {
+                    sortedContactList = contactList.stream()
+                            .sorted(Comparator.comparing(Person::getState))
+                            .collect(Collectors.toList());
+                    printSortedList(sortedContactList);
+                }
+                case 4 -> {
+                    sortedContactList = contactList.stream()
+                            .sorted(Comparator.comparing(Person::getZip))
+                            .collect(Collectors.toList());
+                    printSortedList(sortedContactList);
+                }
+            }
+
+        }
+    }
+
+    /**
+     * printSortedList - method to print contacts in addressBook
+     *
+     * @param sortedContactList - address book that is to be printed
+     */
+    public void printSortedList(List<Person> sortedContactList) {
+        for (Person contact : sortedContactList) {
+            System.out.println(contact);
+            System.out.println();
+        }
     }
 }
 

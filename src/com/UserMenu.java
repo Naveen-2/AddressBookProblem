@@ -17,7 +17,10 @@ public class UserMenu {
                  6.Search Person by City name\s
                  7.Search Person by State name\s
                  8.View Person by City\s
-                 9.View Person by State""");
+                 9.View Person by State\s
+                 10.Count Person by City\s
+                 11.Count Person by State\s
+                 12.Sort contacts Alphabetically\s""");
         System.out.print("Enter your choice: ");
         return input.nextInt();
     }

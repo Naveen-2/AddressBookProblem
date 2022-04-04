@@ -61,6 +61,10 @@ public class Main {
                 Count only the contacts in certain state
                  */
                 case 11 -> addressBookDictionary.countPeopleByRegion(AddressBookMain.personByState);
+                /*
+                Sort the contacts in address book
+                 */
+                case 12 -> addressBookDictionary.sortAddressBook();
                 default -> {
                 }
             }
