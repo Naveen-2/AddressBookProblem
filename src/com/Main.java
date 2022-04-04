@@ -11,14 +11,34 @@ public class Main {
         AddressBookMain addressBookMain = new AddressBookMain();
         UserMenu userMenu = new UserMenu();
 
+        AddressBookDictionary addressBookDictionary = new AddressBookDictionary();
+        addressBookDictionary.addAddressBook(ScannerUtil.getString("Enter name of Address Book: "));
+
         int x;
 
         do {
             int choice = userMenu.showMainMenu();
             switch (choice) {
+                /*
+                Option to add a new contact to the selected address book
+                 */
                 case 1 -> addressBookMain.addContactToAddressBook();
+                /*
+                Option to edit an existing contact with first name selected address book
+                 */
                 case 2 -> addressBookMain.editByName(ScannerUtil.getString("Enter contact name to edit: "));
+                /*
+                 Option to delete an existing contact from the selected address book
+                 */
                 case 3 -> addressBookMain.deleteByName(ScannerUtil.getString("Enter contact name to delete: "));
+                /*
+                Option to add multiple contacts to the selected address book
+                 */
+                case 4 ->  addressBookMain.addMultipleContacts();
+                /*
+                Option to add new address book
+                 */
+                case 5 -> addressBookDictionary.addAddressBook(ScannerUtil.getString("Enter name of Address Book: "));
                 default -> {
                 }
             }

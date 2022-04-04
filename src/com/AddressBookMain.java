@@ -1,8 +1,6 @@
 package com;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class AddressBookMain {
 
@@ -152,5 +150,16 @@ public class AddressBookMain {
                 }
             }
         }
+    }
+
+    /**
+     * addMultipleContacts - method to add multiple contacts in same list
+     */
+    public void addMultipleContacts() {
+        String option;
+        do {
+            addContactToAddressBook();
+            option = ScannerUtil.getString("Press 'Y' to add more contacts");
+        } while (option.equalsIgnoreCase("Y"));
     }
 }
